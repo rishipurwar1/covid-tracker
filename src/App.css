@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.world {
+    margin: 0 auto;
+    /* max-width: 70%; */
+    /* border-radius: 10px; */
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-around; */
+    /* padding: 15px 0; */
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.covid-data {
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding-left: 25px;
+    border-radius: 10px;
+    margin: 0 10px;
+    color: white;
+    width: 220px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.corona {
+    position: absolute;
+    bottom: -45px;
+    right: -45px;
+    width: 120px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.covid-data p {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.type span {
+    display: block;
+    font-size: 20px;
+}
+
+.world .covid-data:nth-child(1) {
+    background-color: #88B3F8;
+}
+
+.world .covid-data:nth-child(2) {
+    background-color: #FB9648;
+}
+
+.world .covid-data:nth-child(3) {
+    background-color: #87CE92;
+}
+
+.world .covid-data:nth-child(4) {
+    background-color: #F95B5A;
+}
+
+.list-container {
+    display: flex;
+}
+
+tbody {
+    display: block;
+    height: 55vh;
+    overflow: auto;
+}
+
+thead {
+    text-align: left;
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;/* even columns width , fix width of table too*/
+}
+
+thead {
+    width: calc( 100% - 1em )
+}
+
+table {
+    width: 50%;
+}
+
+/* chart container */
+.chart-container {
+    position: relative;
+    width: 70%;
+}
+
+/* spinner */
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: rotation 2s infinite;
+    overflow: hidden;
+}
+
+.spinner img {
+    width: 200px;
+}
+
+@keyframes rotation {
+    0% {transform: translate(0)}
+    25% {transform: translateX(50px)}
+    50% {transform: translateY(50px)}
+    75% {transform: translateX(-50px)}
+    100% {transform: translateY(0px)}
 }

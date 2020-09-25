@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import covid from './api/covid'
+import WorldWide from './components/WorldWide';
+import List from './components/List';
+import ShowChart from './components/ShowChart';
+import Search from './components/Search';
+import Spinner from './components/Spinner';
 
-function App() {
-  return (
+const App = () => {
+  const [data, setData] = useState({});
+  const [list, setList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  //get worldwide cases
+  const result = async () => {
+    try {
+      const response = await covid.get("/total");
+      setData(response.data.data);
+      // setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    result();
+  },[]);
+
+  //get country wise cases
+  const listCountries = async () => {
+    try {
+      const response = await covid.get("/current");
+      setList(response.data.data);
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    listCountries();
+  },[]);
+
+  return  isLoading ? ( <Spinner />) : (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Covid-19 Tracker</h1>
+      <Search isLoading={isLoading} setIsLoading={(value) => setIsLoading(value)} searchData={(data) => setData(data)} />
+      <WorldWide data={data} />
+      <List list={list} data={data} />
+      {/* <ShowChartd  /> */}
     </div>
   );
 }
