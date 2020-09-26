@@ -7,10 +7,17 @@ import Search from './components/Search';
 import Spinner from './components/Spinner';
 
 const App = () => {
+  const [country, setCountry] = useState('');
   const [data, setData] = useState({});
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  let value;
 
+  if(country === ''){
+    value= 'WorldWide Cases'
+  } else {
+    value=country;
+  }
   //get worldwide cases
   const result = async () => {
     try {
@@ -42,8 +49,8 @@ const App = () => {
   return  isLoading ? ( <Spinner />) : (
     <div className="App">
       <h1 className="title">C<i className="fas fa-virus"></i>vid-19 Tracker</h1>
-      <Search setIsLoading={(value) => setIsLoading(value)} searchData={(data) => setData(data)} />
-      <ShowCard data={data} value={"WorldWide Cases"} />
+      <Search setValue={(q) => setCountry(q)} setIsLoading={(value) => setIsLoading(value)} searchData={(data) => setData(data)} />
+      <ShowCard data={data} value={value} />
       <List list={list} data={data} />
     </div>
   );

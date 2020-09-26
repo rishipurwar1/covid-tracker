@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import covid from '../api/covid'
 
-const Search = ({searchData, isLoading, setIsLoading}) => {
+const Search = ({searchData, setIsLoading, setValue}) => {
     const [country, setCountry] = useState('');
     const onChange = (q) => {
         setCountry(q);
     }
 
     const onSubmit=(e) => {
+        setValue(`Showing cases in ${country.charAt(0).toUpperCase() + country.slice(1)}`);
         e.preventDefault();
         setIsLoading(true);
         const searchCountry = async (country) => {
