@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import covid from './api/covid'
-import WorldWide from './components/WorldWide';
+import ShowCard from './components/ShowCard';
 import List from './components/List';
-import ShowChart from './components/ShowChart';
 import Search from './components/Search';
 import Spinner from './components/Spinner';
 
@@ -42,11 +41,10 @@ const App = () => {
 
   return  isLoading ? ( <Spinner />) : (
     <div className="App">
-      <h1>Covid-19 Tracker</h1>
-      <Search isLoading={isLoading} setIsLoading={(value) => setIsLoading(value)} searchData={(data) => setData(data)} />
-      <WorldWide data={data} />
+      <h1 className="title">C<i className="fas fa-virus"></i>vid-19 Tracker</h1>
+      <Search setIsLoading={(value) => setIsLoading(value)} searchData={(data) => setData(data)} />
+      <ShowCard data={data} value={"WorldWide Cases"} />
       <List list={list} data={data} />
-      {/* <ShowChartd  /> */}
     </div>
   );
 }

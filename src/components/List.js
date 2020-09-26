@@ -20,9 +20,9 @@ const List = ({list, data}) => {
                         <tr key={uuidv4()}>
                             <td>{country.location}</td>
                             <td>{country.confirmed}</td>
-                            <td>{country.deaths}</td>
-                            <td>{country.recovered}</td>
                             <td>{country.active}</td>
+                            <td>{country.recovered}</td>
+                            <td>{country.deaths}</td>
                         </tr>
                     ))}
                 </tbody>

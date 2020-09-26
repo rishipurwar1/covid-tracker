@@ -1,9 +1,10 @@
 import React from 'react';
 import Case from './Case';
 
-const WorldWide = ({data}) => {
+const ShowCard = ({data, value}) => {
     return (
         <div className="container">
+        <h1 className="heading">{value}</h1>
             <div className="world">
                 <Case data={data.confirmed} value="Confirmed" />
                 <Case data={data.active} value="Active" />
@@ -14,4 +15,4 @@ const WorldWide = ({data}) => {
     )
 }
 
-export default WorldWide;
+export default ShowCard;

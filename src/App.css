@@ -8,29 +8,48 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+}
+
+.search {
+    text-align: center;
+}
+
+.form-control {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    width: 400px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 .world {
-    margin: 0 auto;
-    /* max-width: 70%; */
-    /* border-radius: 10px; */
+    /* margin: 0 auto; */
     display: flex;
     justify-content: center;
-    /* justify-content: space-around; */
-    /* padding: 15px 0; */
+}
 
+.heading {
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 .covid-data {
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    padding-left: 25px;
+    padding: 0 25px;
     border-radius: 10px;
     margin: 0 10px;
     color: white;
-    width: 220px;
-    height: 150px;
+    width: 240px;
+    height: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,7 +106,7 @@ thead {
 thead, tbody tr {
     display: table;
     width: 100%;
-    table-layout: fixed;/* even columns width , fix width of table too*/
+    table-layout: fixed;
 }
 
 thead {
@@ -110,11 +129,10 @@ table {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    animation: rotation 2s infinite;
-    overflow: hidden;
 }
 
 .spinner img {
+    animation: rotation 2s infinite;
     width: 200px;
 }
 

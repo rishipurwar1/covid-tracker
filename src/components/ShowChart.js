@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {Doughnut} from 'react-chartjs-2';
-import covid from '../api/covid';
 
 const ShowChart = ({data}) => {
     const [chartData, setChartData] = useState({});
-    const covidData = [data.confirmed, data.active, data.recovered, data.deaths];
     useEffect(() => {
+        const covidData = [data.confirmed, data.active, data.recovered, data.deaths];
         const chart = () => {
             setChartData({
                 labels: ['Confirmed', 'Active', 'Recovered', 'Death'],
