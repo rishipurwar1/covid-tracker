@@ -91,6 +91,11 @@ body {
 
 .list-container {
     display: flex;
+    margin-top: 25px;
+}
+
+table {
+    margin-left: 15px;
 }
 
 tbody {
@@ -115,6 +120,30 @@ thead {
 
 table {
     width: 50%;
+}
+
+tr th {
+    color: white;
+    text-align: center;
+}
+
+tr th:nth-child(1) {
+    background-color: black;
+}
+tr th:nth-child(2) {
+    background-color: #88B3F8;
+}
+
+tr th:nth-child(3) {
+    background-color: #FB9648;
+}
+
+tr th:nth-child(4) {
+    background-color:  #87CE92;
+}
+
+tr th:nth-child(5) {
+    background-color:  #F95B5A;
 }
 
 /* chart container */

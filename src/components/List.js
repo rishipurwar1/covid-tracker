@@ -5,28 +5,29 @@ import ShowChart from './ShowChart';
 const List = ({list, data}) => {
     return (
         <div className="list-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Country</th>
-                        <th>Confirmed</th>
-                        <th>Deaths</th>
-                        <th>Recovered</th>
-                        <th>Active</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {list.length && list.map(country => (
-                        <tr key={uuidv4()}>
-                            <td>{country.location}</td>
-                            <td>{country.confirmed}</td>
-                            <td>{country.active}</td>
-                            <td>{country.recovered}</td>
-                            <td>{country.deaths}</td>
+                <table>
+                <h1>Country Wise Cases</h1>
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Confirmed</th>
+                            <th>Deaths</th>
+                            <th>Recovered</th>
+                            <th>Active</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {list.length && list.map(country => (
+                            <tr key={uuidv4()}>
+                                <td>{country.location}</td>
+                                <td>{country.confirmed}</td>
+                                <td>{country.active}</td>
+                                <td>{country.recovered}</td>
+                                <td>{country.deaths}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             <ShowChart data={data} />
         </div>
     )

@@ -27,6 +27,7 @@ const ShowChart = ({data}) => {
     },[data])
     return (
         <div className="chart-container">
+            <h1>Graph</h1>
             <Doughnut 
             data={chartData} 
             options={{
