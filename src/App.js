@@ -15,7 +15,7 @@ const App = () => {
   let value;
 
   if(country === ''){
-    value= 'WorldWide Cases'
+    value= 'WorldWide'
   } else {
     value=country;
   }

@@ -28,7 +28,7 @@ const ShowChart = ({data, value}) => {
     },[data])
     return (
         <div className="chart-container">
-            <h1 className="graph-title">{`${country} Covid Graph`}</h1>
+            <h1 className="graph-title">{`${country} Covid-19 Cases Graph`}</h1>
             <Bar
             data={chartData} 
             options={{
