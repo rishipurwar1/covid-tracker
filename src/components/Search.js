@@ -8,9 +8,9 @@ const Search = ({searchData, setIsLoading, setValue}) => {
     }
 
     const onSubmit=(e) => {
-        setValue(country);
         e.preventDefault();
         setIsLoading(true);
+        setValue(country);
         const searchCountry = async (country) => {
             const response = await covid.get(`/country/${country}`);
             searchData(response.data.data)

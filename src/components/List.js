@@ -19,10 +19,10 @@ const List = ({list, data}) => {
                     {list.length && list.map(country => (
                         <tr key={uuidv4()}>
                             <td>{country.location}</td>
-                            <td>{country.confirmed}</td>
-                            <td>{country.active}</td>
-                            <td>{country.recovered}</td>
-                            <td>{country.deaths}</td>
+                            <td>{country.confirmed.toLocaleString()}</td>
+                            <td>{country.active.toLocaleString()}</td>
+                            <td>{country.recovered.toLocaleString()}</td>
+                            <td>{country.deaths.toLocaleString()}</td>
                         </tr>
                     ))}
                 </tbody>
