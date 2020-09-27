@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import {Doughnut} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
-const ShowChart = ({data}) => {
+const ShowChart = ({data, value}) => {
     const [chartData, setChartData] = useState({});
+    let country = value.charAt(0).toUpperCase() + value.slice(1);
     useEffect(() => {
         const covidData = [data.confirmed, data.active, data.recovered, data.deaths];
         const chart = () => {
@@ -27,12 +28,11 @@ const ShowChart = ({data}) => {
     },[data])
     return (
         <div className="chart-container">
-            <h1 className="graph-title">Country Graph</h1>
-            <Doughnut 
+            <h1 className="graph-title">{`${country} Covid Graph`}</h1>
+            <Bar
             data={chartData} 
             options={{
                 responsive: true,
-                title: {text: 'covid cases'}
             }}
             />
         </div>

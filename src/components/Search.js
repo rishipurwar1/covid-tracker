@@ -8,7 +8,7 @@ const Search = ({searchData, setIsLoading, setValue}) => {
     }
 
     const onSubmit=(e) => {
-        setValue(`Showing cases in ${country.charAt(0).toUpperCase() + country.slice(1)}`);
+        setValue(country);
         e.preventDefault();
         setIsLoading(true);
         const searchCountry = async (country) => {

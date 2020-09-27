@@ -24,7 +24,6 @@ const App = () => {
     try {
       const response = await covid.get("/total");
       setData(response.data.data);
-      // setIsLoading(false);
     } catch (err) {
       console.log(err);
     }
@@ -51,9 +50,9 @@ const App = () => {
     <div className="App">
       <h1 className="title">C<i className="fas fa-virus"></i>vid-19 Tracker</h1>
       <Search setValue={(q) => setCountry(q)} setIsLoading={(value) => setIsLoading(value)} searchData={(data) => setData(data)} />
-      <ShowCard data={data} value={value} />
+        <ShowCard data={data} value={value} />
+        <ShowChart value={value} data={data} />
       <List list={list} data={data} />
-      <ShowChart data={data} />
     </div>
   );
 }

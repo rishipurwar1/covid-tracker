@@ -165,6 +165,16 @@ tr th:nth-child(5) {
     height: 100vh;
 }
 
+.copyright {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 500;
+}
+
+.fa-heart {
+    color: red;
+}
+
 .spinner img {
     animation: rotation 2s infinite;
     width: 200px;
