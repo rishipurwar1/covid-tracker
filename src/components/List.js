@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 const List = ({list, data}) => {
     return (
         <div className="list-container">
-            <h1 className="country">Country Wise Cases</h1>
+            <h1 className="country">Country Wise Covid-19 Cases</h1>
             <table>
                 <thead>
                     <tr>
