@@ -31,7 +31,6 @@ body {
 }
 
 .world {
-    /* margin: 0 auto; */
     display: flex;
     justify-content: center;
 }
@@ -90,7 +89,7 @@ body {
 }
 
 .list-container {
-    display: flex;
+    width: 100%;
     margin-top: 25px;
 }
 
@@ -122,10 +121,6 @@ thead {
     width: calc( 100% - 1em )
 }
 
-table {
-    width: 50%;
-}
-
 tr th {
     color: white;
     text-align: center;
@@ -152,8 +147,14 @@ tr th:nth-child(5) {
 
 /* chart container */
 .chart-container {
+    margin: 0 auto;
+    margin-top: 15px;
     position: relative;
-    width: 70%;
+    width: 850px;
+}
+
+.graph-title {
+    text-align: center;
 }
 
 /* spinner */
@@ -178,7 +179,27 @@ tr th:nth-child(5) {
 }
 
 @media (min-width: 1200px) {
-    body {
+    #root {
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 960px) {
+    .world {
+        flex-wrap: wrap;
+    }
+    .covid-data {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 850px) {
+    .chart-container {
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .form-control {
+        width: 100%;
     }
 }

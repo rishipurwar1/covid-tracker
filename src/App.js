@@ -5,6 +5,7 @@ import ShowCard from './components/ShowCard';
 import List from './components/List';
 import Search from './components/Search';
 import Spinner from './components/Spinner';
+import ShowChart from './components/ShowChart'
 
 const App = () => {
   const [country, setCountry] = useState('');
@@ -52,6 +53,7 @@ const App = () => {
       <Search setValue={(q) => setCountry(q)} setIsLoading={(value) => setIsLoading(value)} searchData={(data) => setData(data)} />
       <ShowCard data={data} value={value} />
       <List list={list} data={data} />
+      <ShowChart data={data} />
     </div>
   );
 }

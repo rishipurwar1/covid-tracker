@@ -1,6 +1,5 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import ShowChart from './ShowChart';
 
 const List = ({list, data}) => {
     return (
@@ -28,7 +27,6 @@ const List = ({list, data}) => {
                         ))}
                     </tbody>
                 </table>
-            <ShowChart data={data} />
         </div>
     )
 }
