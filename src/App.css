@@ -94,6 +94,10 @@ body {
     margin-top: 25px;
 }
 
+.country {
+    text-align: center;
+}
+
 table {
     margin-left: 15px;
 }
@@ -171,4 +175,10 @@ tr th:nth-child(5) {
     50% {transform: translateY(50px)}
     75% {transform: translateX(-50px)}
     100% {transform: translateY(0px)}
+}
+
+@media (min-width: 1200px) {
+    body {
+        margin: 0 auto;
+    }
 }

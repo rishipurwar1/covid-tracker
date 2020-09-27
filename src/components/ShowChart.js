@@ -26,8 +26,9 @@ const ShowChart = ({data}) => {
         chart();
     },[data])
     return (
-        <div className="chart-container">
-            <h1>Graph</h1>
+        <div style={{ padding: '0px',display: 'flex', justifyContent: 'center', flexDirection: 'column',
+        alignItems: 'center'}} className="chart-container">
+            <h1>Country Graph</h1>
             <Doughnut 
             data={chartData} 
             options={{

@@ -6,7 +6,7 @@ const List = ({list, data}) => {
     return (
         <div className="list-container">
                 <table>
-                <h1>Country Wise Cases</h1>
+                <h1 className="country">Country Wise Cases</h1>
                     <thead>
                         <tr>
                             <th>Country</th>
